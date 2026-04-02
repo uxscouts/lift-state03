@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Form from './components/Form';
+import BookingPage from './components/BookingPage';
 import BookingForm from './components/BookingForm';
 import './App.css'
 
@@ -33,9 +34,12 @@ function App() {
           </div>
         )}
       </div>
+
+
+
       <div className="App">
         <h2>Parent to BookingForm.jsx</h2>
-        <BookingForm onSubmitBooking={handleSubmitBooking}/>
+        <BookingPage onSubmitBooking={handleSubmitBooking}/>
         { formDataBooking && (
           <div>
             <h2>Submitted Data</h2>
@@ -47,6 +51,9 @@ function App() {
               <p>Guests: {formDataBooking.guests}</p>
               <p>Occasion: {formDataBooking.occasion}</p>
           </div>
+
+
+
         )}
       </div>
     </>
