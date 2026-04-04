@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import BookingHours from './BookingHours';
 
 const BookingForm = ({onSubmitBooking}) => {
     // name email phone date time guests occasion
@@ -9,6 +10,9 @@ const BookingForm = ({onSubmitBooking}) => {
     const [time, setTime] = useState('');
     const [guests, setGuests] = useState('2');
     const [occasion, setOccasion] = useState('Dinner');
+
+     const [time2, setTime2] = useState(""); // 1. Parent state
+     
 
     const nameChangeHandler = (event) => {
         setName(event.target.value);
@@ -35,7 +39,7 @@ const BookingForm = ({onSubmitBooking}) => {
     const handleSubmitBooking = (event) => {
         event.preventDefault();
         // now use callback function
-         onSubmitBooking({name, email, phone, date, time, guests, occasion})
+         onSubmitBooking({name, email, phone, date, time, time2, guests, occasion})
          // clear values
          setName('');
          setEmail('');
@@ -78,7 +82,14 @@ const BookingForm = ({onSubmitBooking}) => {
                         Time:
                         <input type="text" value={time} onChange={timeChangeHandler}/>
                     </label>
-                 </div> 
+                 </div>
+                  <div>  
+                    <label>
+                        <p>Value in Parent: {time2}</p>
+                        Time2:
+                        <BookingHours onValueChange={setTime2} />
+                    </label>
+                 </div>                  
                  <div>   
                     <label>
                         Guests:

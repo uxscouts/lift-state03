@@ -48,6 +48,7 @@ function App() {
               <p>Phone: {formDataBooking.phone}</p>
               <p>Date: {formDataBooking.date}</p>
               <p>Time: {formDataBooking.time}</p>
+              <p>Time2: {formDataBooking.time2}</p>
               <p>Guests: {formDataBooking.guests}</p>
               <p>Occasion: {formDataBooking.occasion}</p>
           </div>
